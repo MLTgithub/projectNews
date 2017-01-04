@@ -1,0 +1,29 @@
+<ion-view>
+    <ion-header-bar class="bar-dark">
+        <a class="button button-clear icon ion-android-arrow-back" nav-direction="back" href="#/tabs/news"></a>
+        <a class="button button-clear icon ion-android-more-vertical"></a>
+    </ion-header-bar>
+    <ion-content class="detail">
+        <div ng-if="!mlt">
+            <img ng-src="image/error.gif">
+        </div>
+        <div ng-if="mlt">
+            <h3>{{newsDetail.detail.title}}</h3>
+            <span>{{newsDetail.detail.source}}</span>
+            <span>{{newsDetail.detail.ptime}}</span>
+            <hr style="border:none;border-bottom: 1px gray dashed; margin-bottom: 10px;">
+            <b ng-bind-html="newsDetail.detail.body"></b>
+            <p>{{newsDetail.detail.statement}}</p>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-dark">
+        <label class="item item-input">
+            <i class="icon ion-android-create placeholder-icon"></i>
+            <input type="text" placeholder="写跟帖">
+        </label>
+        <a class="button button-clear pull-right">
+            <i class="icon ion-chatbubble-working">{{newsDetail.detail.replyCount}}</i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="icon ion-android-share-alt"></i>
+        </a>
+    </ion-footer-bar>
+</ion-view>

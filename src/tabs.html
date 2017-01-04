@@ -1,0 +1,41 @@
+<ion-nav-bar class="bar bar-assertive">
+    <ion-nav-back-button>返回</ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-tabs class="tabs-icon-top tabs-color-active-assertive" delegate-handle="mainSlideBox">
+    <!--首页页面-->
+    <ion-tab title="新闻"
+             icon="ion-paper"
+             icon-on="ion-ios-paper"
+             icon-off="ion-ios-paper-outline"
+             href="#/tabs/news">
+        <ion-nav-view name="tabs-news"></ion-nav-view>
+    </ion-tab>
+
+    <!--直播页面-->
+    <ion-tab title="直播"
+             icon="ion-monitor"
+             icon-on="ion-ios-monitor"
+             icon-off="ion-ios-monitor-outline"
+             href="#/tabs/live">
+        <ion-nav-view name="tabs-live"></ion-nav-view>
+    </ion-tab>
+
+    <!--话题页面-->
+    <ion-tab title="话题"
+             icon="ion-chatbubble"
+             icon-on="ion-ios-chatbubble"
+             icon-off="ion-ios-chatbubble-outline"
+             href="#/tabs/talk">
+        <ion-nav-view name="tabs-talk"></ion-nav-view>
+    </ion-tab>
+
+    <!--我的页面-->
+    <ion-tab title="我的"
+             icon="ion-person"
+             icon-on="ion-ios-person"
+             icon-off="ion-ios-person-outline"
+             href="#/tabs/my">
+        <ion-nav-view name="tabs-my"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>
