@@ -1,0 +1,62 @@
+<ion-view>
+    <ion-nav-buttons>
+        <button class="button button-clear" ng-click="XIAN($event)" style="border-bottom: 5px solid white">问吧</button>&nbsp;&nbsp;
+        <button class="button button-clear" ng-click="XIAN($event)">话题</button>&nbsp;&nbsp;
+        <button class="button button-clear" ng-click="XIAN($event)">关注</button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a class="button button-clear icon ion-person" nav-direction="forward" href="#/tabs/my"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="row row-wrap">
+            <div class="col col-20" ng-repeat="btn in btns">
+                <button class="button button-light">
+                    <img ng-src="{{btn.icon}}">
+                    <span>{{btn.name}}</span>
+                </button>
+            </div>
+        </div>
+        <div class="button button-stable button-clear xiala">
+            <i class="icon ion-chevron-down ifyou"></i>
+        </div>
+
+
+        <!--下拉刷新-->
+        <ion-refresher
+                pulling-text="下拉刷新..."
+                on-refresh="doRefresh()"
+                on-pulling="doSome()"
+                spinner="lines"
+                refreshing-text="正在刷新...">
+        </ion-refresher>
+
+        <ion-list ng-repeat="con in cons">
+            <ion-item class="conn">
+                <img ng-src="{{con.headpicurl}}">
+                <div class="con1">
+                    <span>{{con.name}}</span>
+                    <span>{{con.title}}</span>
+                </div>
+                <img ng-src="{{con.picurl}}" class="full-image" style="display: block">
+                <span class="item-text-wrap">{{con.alias}}</span>
+                <div class="con2">
+                    <a>{{con.classification}}</a>
+                    <span>{{con.concernCount}}关注</span>
+                    <span>{{con.answerCount}}提问</span>
+                    <button class="button button-assertive button-small qwer" ng-style="attentionStyle" ng-click="changeStyle($event)">+关注</button>
+                </div>
+            </ion-item>
+        </ion-list>
+
+
+        <!--上拉加载-->
+        <ion-infinite-scroll
+                on-infinite="loadMore()"
+                distance="1%"
+                spinner="android"
+                icon="ion-load-a"
+                immediate-check="true"
+                ng-if="isShowInfinite">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
